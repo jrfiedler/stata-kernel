@@ -1,12 +1,11 @@
 import os
 import re
 import time
+import tempfile
 
 import win32com.client
 from IPython.kernel.zmq.kernelbase import Kernel
 from IPython.core.magic import register_line_cell_magic
-
-LOG_LOCATION = 'C:/Users/jf/Documents/StataNotebooks/'
 
 
 class StataKernel(Kernel):
@@ -21,7 +20,7 @@ class StataKernel(Kernel):
         'file_extension': 'do',
     }
     
-    log_address = os.path.join(LOG_LOCATION, 'log001.txt')
+    log_address = os.path.join(tempfile.gettempdir(), 'stata_kernel_log.txt')
     
     def __init__(self, *args, **kwargs):
         super(StataKernel, self).__init__(*args, **kwargs)
