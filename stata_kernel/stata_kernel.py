@@ -5,7 +5,10 @@ import time
 import tempfile
 
 import win32com.client
-from ipykernel.kernelbase import Kernel
+try:
+    from ipykernel.kernelbase import Kernel
+except ImportError:
+    from IPython.kernel.zmq.kernelbase import Kernel
 from IPython.core.magic import register_line_cell_magic
 
 
