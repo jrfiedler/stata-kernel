@@ -1,10 +1,11 @@
+from __future__ import print_function 
 import os
 import re
 import time
 import tempfile
 
 import win32com.client
-from IPython.kernel.zmq.kernelbase import Kernel
+from ipykernel.kernelbase import Kernel
 from IPython.core.magic import register_line_cell_magic
 
 
@@ -32,7 +33,7 @@ class StataKernel(Kernel):
         self.log_file = open(self.log_address)
         self.continuation = False
         
-        print 'init complete'
+        print('init complete')
         
     def remove_continuations(self, code):
         return re.sub(r'\s*\\\\\\\s*\n', ' ', code)
