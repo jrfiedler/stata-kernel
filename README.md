@@ -1,6 +1,8 @@
 # stata-kernel
 A Stata kernel for IPython/Jupyter
 
+**This code is not actively maintained. If anyone is interested in taking over this project, with more active maintenance, please feel free to do so.**
+
 ## Setup
 This kernel currently only works in Windows.
 
